@@ -1,0 +1,120 @@
+#formulario{
+  position: fixed;
+  right: 0%;
+  bottom: 0%;
+  height: 0%;
+  width: 0%;
+ overflow-y: scroll;
+  border-radius: 2%;
+  font-family: arial;
+  z-index: 1;
+}
+
+#formcontacto{
+  margin-left: 5%;
+  border:1px solid white;
+  background-color: #6388C5;
+  z-index: 9999;
+  border-radius:3%;
+  width: 90%;
+  margin-bottom: 5%;
+}
+#formcontacto button{
+  width: 40%;
+  border:2px inset white;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-left: 30%;
+  color: white;
+  text-align: center;
+  background-color: #6388C5;
+}
+#titulo{
+  color: white;
+}
+
+#formcontacto button:hover{
+  background-color: #1B396A;
+  opacity: 90%;
+  transition: 1s;
+}
+.campos{
+  width: 95%;
+  color: black;
+  outline-color: transparent;
+}
+select.campos,option.campos{
+  cursor: pointer;
+}
+#Bminimizar{
+  color:white;
+  border:none;
+  font-style: oblique;
+  /*border-style: groove;
+  border-color: #DE7925;*/
+  background-color: Transparent;
+  position: absolute;
+  right: 0%;
+  cursor: pointer;
+}
+#Bcontacto:hover {
+    -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+#Bcontacto{
+  background-color: white;
+  border-radius: 40%;
+  border: 3px inset #1B396A;
+  cursor:pointer;
+  position: fixed;
+  right: 1%;
+  bottom: 1%;
+  height: 10%;  
+}
+
+/* Hasta 600px */
+ @media only screen and (max-width: 600px){
+#Bcontacto{
+  width: 15%;
+}
+#formcontacto button{
+  width: 50%;
+}
+
+}
+
+/* Dispositivos mayores de 600px */
+@media only screen and (min-width: 600px) {
+ 
+#Bcontacto{  
+  width: 12%;
+}
+}
+
+/* Dispositivos mayores de 768px */
+@media only screen and (min-width: 768px) {
+  
+#Bcontacto{ 
+  width: 10%;
+}
+
+}
+
+/* Dispositivos mayores de 992px */
+@media only screen and (min-width: 992px) {
+  
+#Bcontacto{
+  width: 8%;
+}
+}
+
+/* Dispositivos mayores de 1200px */
+@media only screen and (min-width: 1200px) {
+  
+#Bcontacto{
+  width: 7%;
+}
+
+}
