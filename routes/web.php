@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', [GeneralController::class, 'principal']);
 
+Route::get('/principal/{boletine:id}', [GeneralController::class, 'showBoletine']);
 
 Route::get('/conocenos', function () {
     return view('nosotros.nosotros');
