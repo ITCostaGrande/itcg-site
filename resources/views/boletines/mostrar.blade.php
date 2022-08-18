@@ -1,0 +1,72 @@
+@extends('layout.layout')
+@section('content')
+    <div class="col-xs-12 centrado">
+        <h2>Todos los Boletines</h2>
+        <hr class="divisor">
+        <br>
+        <a href="/boletines/agregar">Agregar boletin</a>
+        <br>
+        <a href="/usuarios/panel">Regresar al Panel de Control</a>
+        <table width="934" border="1" align="center" cellpadding="0" cellspacing="0">
+            <tr bgcolor="#0099CC">
+                <td width="30" rowspan="2">
+                    <div align="center"><strong>No.</strong></div>
+                </td>
+                <td width="125" rowspan="2">
+                    <div align="center"><strong>Imagen</strong></div>
+                </td>
+                <td width="254" rowspan="2" bgcolor="#0099CC">
+                    <div align="center"><strong>Título</strong></div>
+                </td>
+                <td colspan="2">
+                    <div align="center"><strong>PUBLICACIÓN</strong></div>
+                </td>
+                <td width="64" rowspan="2">
+                    <div align="center"><strong>Editar</strong></div>
+                </td>
+                <td width="111" rowspan="2">
+                    <div align="center"><strong>Eliminar</strong></div>
+                </td>
+            </tr>
+            <tr bgcolor="#0099CC">
+                <td width="110"> Fecha Ingreso</td>
+                <td width="106">Fecha Final</td>
+            </tr>
+
+            @foreach($boletines as $row)
+
+                <tr class="brillo">
+                    <td width="30">{{$row->id}}</td>
+
+                    <td width="125"><a href="ver_boletin.php?recordID={{$row->id}}" onclick="valida();">
+                            <img
+                                src="/storage/{{$row->image_1}}" width="130" height="120"
+                                alt="{{$row->image_1}}"
+                                border="1"/></a></td>
+
+                    <td>{{$row->title}}</td>
+                    <td>
+                        <div align="center">
+                            {{$row->created_at}}
+                        </div>
+                    </td>
+                    <td>
+                        <div align="center">
+                            {{$row->final_date}}
+                        </div>
+                    </td>
+
+                    <td>
+                        <div align="center"><a href="/boletines/{{$row->id}}"><img
+                                    src="../img_menu/editar.png" width="47" height="48"/></a></div>
+                    </td>
+                    <td width="125">
+                        <div align="center"><a href="/boletines/eliminar/{{$row->id}}"
+                                               onclick="if(confirm('¿Realmente deseas eliminarlo?')==false){return false;}"><img
+                                    src="../img_menu/eliminar.gif" width="30" height="30" border="0"/></a></div>
+                    </td>
+                </tr>
+            @endforeach
+        </table>
+
+@endSection
